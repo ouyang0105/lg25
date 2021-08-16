@@ -1,0 +1,22 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: gatewat-zuul
+eureka:
+  client:
+    service-url:
+     defaultZone: http://admin:123@eureka2.com:6002/eureka/,http://admin:123@eureka1.com:6001/eureka/  #注意用户名和密码 @
+
+zuul:
+ routes:
+  users-provider: /provider/*
+  users-consumer: /consumer/*
+ prefix: /gateway                       #前缀
+ ignored-services: '*'                  #禁用服务名访问(内网不受该限制)
+ ignored-patterns: /**/cmap/**             #禁用某些路径
+ sensitive-headers: '*'                 #解决走网关session变化
+ host:
+   socket-timeout-millis: 6000
+   connect-timeout-millis: 6000
+

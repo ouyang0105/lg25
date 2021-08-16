@@ -1,0 +1,133 @@
+﻿<HTML xmlns:th="http://www.thymeleaf.org">
+<HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<TITLE>发布新投票</TITLE> <LINK href="css/style.css" rel="stylesheet" type="text/css">
+<META name="GENERATOR" content="MSHTML 11.00.10586.420"></HEAD> 
+<BODY>
+<DIV class="wrap" id="header"><IMG src="images/logo.gif"> </DIV>
+<DIV class="wrap" id="navbar">
+<DIV class="profile">您好，admin		 <SPAN class="return"><A href="votelist">返回列表</A></SPAN>
+		 <SPAN class="addnew"><A href="add">添加新投票</A></SPAN>
+		 <SPAN class="modify"><A href="http://localhost:8080/myVote/Subject-modify.action">维护</A></SPAN>
+		 <SPAN class="return"><A 
+href="zx">注销</A></SPAN>	 </DIV>
+<DIV class="search">
+<FORM action="Subject-search.action" method="post">
+    <INPUT name="keywords" class="input-text" type="text">
+    <INPUT name="submit" class="input-button" type="submit" value=""/>
+</FORM></DIV></DIV>
+<DIV class="box" id="voteManage">
+<H2>添加新投票</H2>
+<DIV class="content">
+<FORM  action="javascript:void(0);" method="post" id="form">
+<DL>
+  <DT>投票内容：</DT>
+  <DD><INPUT name="title" class="input-text" id="title" type="text" onblur="pdtitle(this.value)">
+  </DD>
+  <DT>投票类型：</DT>
+  <DD><INPUT name="type" type="radio" checked="true" value="1">单选 <INPUT name="type" type="radio" value="2">多选 </DD>
+  <DT>投票选项：</DT>
+  <DD id="voteoptions">
+  <P><INPUT name="options" class="input-text" type="text"></P>
+  <P><INPUT name="options" class="input-text" type="text"></P></DD>
+  <DT></DT>
+  <DD class="button"><INPUT type="image" src="images/button_submit.gif" onclick="tijiao()"  />
+  					 <A onclick="AddOption()" href="javascript:void(0);">增加选项</A>					 <A href="votelist">取消操作</A>
+  				 </DD></DL></FORM></DIV></DIV>
+<DIV class="wrap" id="footer">	北大青鸟 © 版权所有 </DIV></BODY></HTML>
+<script src="js/jquery-1.8.3.min.js" ></script>
+<SCRIPT type="text/javascript">
+    $(function(){
+
+    });
+
+    function tijiao(){
+       if(fkpd()){
+           $.ajax({
+               dataType:'json',
+               type:'post',
+               async:false,
+               data: $("#form").serialize(),
+               url: 'insert_subject',
+               success:function(data){
+                 if(data==true){
+                     alert("新增成功");
+                     window.location.href='votelist';
+                 }
+               }
+           })
+       }
+    }
+
+    function pdtitle(title){
+        $.ajax({
+            dataType:'json',
+            type:'post',
+            async:false,
+            data:{"title":title},
+            url:'select_title',
+            success:function(data){
+                if(data==true){
+                    alert("该投票以存在，请重新选择标题");
+                    $(this).val("");
+                }
+            }
+        });
+    }
+
+
+
+    function AddOption(){
+        var input=$("<P><INPUT name='options' class='input-text' type='text'></P>");
+        $("#voteoptions").append(input);
+        if($("input[name=options]").size()>2){
+            $("input[name=options]").next().remove();
+            $("input[name=options]").parent().append($("<a href='javascript:void(0);' class='delete'>删除</a>"));
+        }
+    }
+    $(document).on("click",".delete",function(){
+       $(this).parent().remove();
+        if($("input[name=options]").size()<3){
+            $(".delete").remove();
+        }
+    });
+
+
+    $(document).on("blur","input[name=options]",function(){
+      if($(this).val()!=null&&$(this).val()!=''){
+          var arr=new Array();
+          var options =$("input[name=options]").not(this);
+          arr=options.map(function(){
+              return $(this).val();
+          });
+          var pd=$.inArray($(this).val(),arr);
+          if (pd!=-1){
+              $(this).val("");
+              alert("选项重复请重新输入");
+          }else{
+              $(this).next("span").remove();
+          }
+
+
+      }
+    });
+
+
+    function fkpd(){
+        var pd=true;
+        $("#form .input-text").each(function(){
+            if($(this).val()==null||$(this).val()==''){
+                pd=false;
+                var tx=$(this).closest("dd").prev("dt").text();
+                alert("不能有空的"+tx);
+                return pd;
+            }
+        });
+        return pd;
+    }
+
+
+
+</SCRIPT>

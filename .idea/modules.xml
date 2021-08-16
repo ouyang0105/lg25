@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyVote/MyVote.iml" filepath="$PROJECT_DIR$/MyVote/MyVote.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/Spring.iml" filepath="$PROJECT_DIR$/Spring/Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBoot02/SpringBoot02.iml" filepath="$PROJECT_DIR$/SpringBoot02/SpringBoot02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBoot03/SpringBoot03.iml" filepath="$PROJECT_DIR$/SpringBoot03/SpringBoot03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Springboot04/Springboot04.iml" filepath="$PROJECT_DIR$/Springboot04/Springboot04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/boot-adminui/boot-adminui.iml" filepath="$PROJECT_DIR$/cloud/boot-adminui/boot-adminui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud.iml" filepath="$PROJECT_DIR$/cloud/cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-common/cloud-common.iml" filepath="$PROJECT_DIR$/cloud/cloud-common/cloud-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-usersprovider7001/cloud-usersprovider7001.iml" filepath="$PROJECT_DIR$/cloud/cloud-usersprovider7001/cloud-usersprovider7001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-zuul9001/cloud-zuul9001.iml" filepath="$PROJECT_DIR$/cloud/cloud-zuul9001/cloud-zuul9001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloudusersconsumer8001/cloudusersconsumer8001.iml" filepath="$PROJECT_DIR$/cloud/cloudusersconsumer8001/cloudusersconsumer8001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo/dubbo.iml" filepath="$PROJECT_DIR$/dubbo/dubbo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo/dubbo-api/dubbo-api.iml" filepath="$PROJECT_DIR$/dubbo/dubbo-api/dubbo-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo/dubbo-provider/dubbo-provider.iml" filepath="$PROJECT_DIR$/dubbo/dubbo-provider/dubbo-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo/dubbo-userconsumer/dubbo-userconsumer.iml" filepath="$PROJECT_DIR$/dubbo/dubbo-userconsumer/dubbo-userconsumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/eureka-server6001/eureka-server6001.iml" filepath="$PROJECT_DIR$/cloud/eureka-server6001/eureka-server6001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/eureka-server6002/eureka-server6002.iml" filepath="$PROJECT_DIR$/cloud/eureka-server6002/eureka-server6002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nosql/nosql.iml" filepath="$PROJECT_DIR$/nosql/nosql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/vloud-hystrixdashboard5001/vloud-hystrixdashboard5001.iml" filepath="$PROJECT_DIR$/cloud/vloud-hystrixdashboard5001/vloud-hystrixdashboard5001.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+        <tr>
+            <td>员工编号</td>
+            <td>员工姓名</td>
+            <td>员工入职时间</td>
+            <td>员工薪资</td>
+            <td>部门</td>
+        </tr>
+        <tr th:each="e,empStat:${page.records}" >
+            <td><a href="#" th:href="@{'selectById?empno='+${e.empno}}" th:text="${e.empno}"></a></td>
+            <td th:text="${e.ename}">员工姓名</td>
+            <td th:text="${#dates.format(e.hiredate,'yyyy-MM-dd')}">员工入职时间</td>
+            <td th:text="${#numbers.formatDecimal(e.sal,5,2)}">员工薪资</td>
+            <td th:text="${e.dept.deptno}">部门</td>
+        </tr>
+</table>
+<a href="selectList?pageIndex=1&pageSize=3">首页</a>&nbsp;&nbsp;&nbsp;<a href="#" th:href="@{'selectList?pageIndex='+${page.current+1}+'&pageSize=3'}">下一页</a>&nbsp;&nbsp;&nbsp;<a href="#" th:href="@{'selectList?pageIndex='+${page.current-1}+'&pageSize=3'}">上一页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="selectList?pageIndex=1&pageSize=3" th:href="@{'selectList?pageIndex='+${page.pages}+'&pageSize=3'}">末页</a>
+</body>
+</html>

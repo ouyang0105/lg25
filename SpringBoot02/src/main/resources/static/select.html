@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+        <tr>
+            <td>员工编号</td>
+            <td>员工姓名</td>
+            <td>员工入职时间</td>
+            <td>员工薪资</td>
+            <td>部门</td>
+        </tr>
+        <tr th:each="e,empStat:${list}" >
+            <td><a href="#" th:href="@{'selectOne?empno='+${e.empno}}" th:text="${e.empno}"></a></td>
+            <td th:text="${e.ename}">员工姓名</td>
+            <td th:text="${#dates.format(e.hiredate,'yyyy-MM-dd')}">员工入职时间</td>
+            <td th:text="${e.sal}">员工薪资</td>
+            <td th:text="${e.dept.deptno}">部门</td>
+        </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,18 @@
+server:
+  port: 8082
+
+dubbo:
+  application:
+    name: dubbo-consumer
+  registry:
+    address: 127.0.0.1:2181
+    protocol: zookeeper
+  consumer:
+    retries: 1
+    timeout: 3000
+  monitor:
+    protocol: registry
+
+  reference:
+    loadbalance: roundrobin
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/MyVote" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringBoot01" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringBoot02" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Spring/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot02/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot03/pom.xml" />
+        <option value="$PROJECT_DIR$/MyVote/pom.xml" />
+        <option value="$PROJECT_DIR$/Springboot04/pom.xml" />
+        <option value="$PROJECT_DIR$/nosql/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo/dubbo-userconsumer/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo/dubbo-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo/dubbo-api/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloud-common/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/eureka-server6001/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloud-usersprovider7001/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloudusersconsumer8001/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/eureka-server6002/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/vloud-hystrixdashboard5001/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/boot-adminui/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloud-zuul9001/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

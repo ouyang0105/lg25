@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/MyVote/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyVote/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBoot02/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBoot02/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBoot03/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBoot03/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Springboot04/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Springboot04/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/boot-adminui/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/boot-adminui/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloud-usersprovider7001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloud-usersprovider7001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloud-zuul9001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloud-zuul9001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloudusersconsumer8001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloudusersconsumer8001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/eureka-server6001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/eureka-server6001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/eureka-server6002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/eureka-server6002/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/vloud-hystrixdashboard5001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/vloud-hystrixdashboard5001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dubbo/dubbo-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dubbo/dubbo-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dubbo/dubbo-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dubbo/dubbo-provider/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dubbo/dubbo-userconsumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dubbo/dubbo-userconsumer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nosql/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nosql/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

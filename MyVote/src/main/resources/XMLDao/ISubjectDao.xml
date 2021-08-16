@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace映射dao接口的全路径 -->
+<mapper namespace="com.cssl.dao.ISubjectDao">
+    <select id="votelist" resultType="map" >
+        SELECT MAX(t.sid) sid,t.title,MAX(t.type) TYPE,COUNT(distinct o.content) contentNum,COUNT(v.vid) vidNum  FROM SUBJECT t
+        LEFT JOIN Options o ON o.op_sid=t.sid
+        LEFT JOIN vote v ON o.oid=v.oid
+        ${ew.customSqlSegment}
+        GROUP BY t.title
+    </select>
+</mapper>

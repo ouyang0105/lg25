@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <form action="insert" method="post" >
+        <tr>
+            <td>员工编号</td><td><input name="empno" ></td>
+        </tr>
+        <tr>
+            <td>员工姓名</td><td><input name="ename" ></td>
+        </tr>
+        <tr>
+            <td>员工入职时间</td><td><input name="hiredate" type="date" ></td>
+        </tr>
+        <tr>
+            <td>员工薪资</td><td><input name="sal" ></td>
+        </tr>
+        <tr>
+            <td>部门</td>
+            <td>
+                <select name="dept.deptno">
+                   <option th:each="n:${m2}" th:text="${n.dname}" th:value="${n.deptno}" >
+                   </option>
+                </select>
+            </td>
+        </tr>
+        <tr><input type="submit" value="提交"></tr>
+    </form>
+</table>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Project exclude paths
+/cloud/boot-adminui/target/
+/cloud/cloud-common/target/
+/cloud/cloud-usersprovider7001/target/
+/cloud/cloud-zuul9001/target/
+/cloud/cloudusersconsumer8001/target/
+/cloud/eureka-server6001/target/
+/cloud/eureka-server6002/target/
+/cloud/vloud-hystrixdashboard5001/target/

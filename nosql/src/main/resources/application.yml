@@ -1,0 +1,52 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///test?serverTimezone=GMT
+    username: root
+    password: root
+  data:
+    mongodb:
+      uri:  mongodb://test:test@192.168.100.128:27017/test
+  thymeleaf:
+    cache: false
+
+
+
+  redis:
+    host: 192.168.100.128
+    port: 6001
+    username: default            #6.x新增acl
+    password: 123456
+    database: 0
+    timeout: 10s  # 数据库连接超时时间，2.x中该参数的类型为Duration，在配置的时候需要指明单位
+    # 连接池配置，2.x中直接使用jedis或者lettuce配置连接池
+    jedis: # 也可以使用[lettuce]
+      pool:
+        max-idle: 50        # 最大空闲连接数
+        min-idle: 10        # 最小空闲连接数
+        max-wait: -1s        # 等待可用连接的最大时间，负数为不限制
+        max-active: -1
+
+#    sentinel:
+#      master: mymaster
+      #只配哨兵不需要配主从服务器地址（三个哨兵集群地址）
+#      nodes: 192.168.174.133:26379
+
+mybatis-plus:
+  type-aliases-package: com.cssl.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    auto-mapping-behavior: full
+    use-generated-keys: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+      logic-delete-field: is_delete # 全局逻辑删除的实体字段名
+
+pagehelper:
+  reasonable: true
+  page-size-zero: true

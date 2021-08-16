@@ -1,0 +1,97 @@
+﻿<HTML xmlns:th="http://www.thymeleaf.org">
+<HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<TITLE>参与投票</TITLE> <LINK href="css/style.css" rel="stylesheet" type="text/css">
+<META name="GENERATOR" content="MSHTML 11.00.10586.420"></HEAD> 
+<BODY>
+<DIV class="wrap" id="header"><IMG src="images/logo.gif"> </DIV>
+<DIV class="wrap" id="navbar">
+<DIV class="profile">您好，admin		 <SPAN class="return"><A href="votelist">返回列表</A></SPAN>
+		 <SPAN class="addnew"><A href="add">添加新投票</A></SPAN>
+		 <SPAN class="modify"><A href="#">维护</A></SPAN>
+		 <SPAN class="return"><A 
+href="zx">注销</A></SPAN>	 </DIV>
+<DIV class="search">
+<FORM action="vote" method="post">
+    <INPUT name="keywords" class="input-text" type="text" th:value="${keywords}">
+    <input name="sid" th:value="${map.SID}" type="hidden">
+    <INPUT name="submit" class="input-button" type="submit" value=""/>
+</FORM></DIV></DIV>
+<DIV class="wrap" id="vote">
+<H2>参与投票</H2>
+<UL class="list">
+  <LI>
+
+  <H4 th:text="${map.TITLE}">就业意向城市</H4>
+  <P class="info">共有 <span th:text="${map.CONTENTNUM}">4</span> 个选项，已有 <span th:text="${map.VIDNUM}">9</span> 个投票。</P>
+  <FORM action="javascript:void(0);" method="post" id="form">
+      <input type="hidden" th:value="${map.SID}" name="sid">
+  <OL>
+    <LI th:each="o,oStat:${olist}">
+        <INPUT name="oid" th:if="${map.TYPE==1}" type="radio" value="2"  th:text="${o.content}" th:value="${o.oid}">
+        <INPUT name="oid" th:if="${map.TYPE==2}" type="checkbox" value="2"  th:text="${o.content}" th:value="${o.oid}">
+    </LI>
+    <!--<LI><INPUT name="options" type="radio" value="3">广州</LI>
+    <LI><INPUT name="options" type="radio" value="5">上海</LI>
+    <LI><INPUT name="options" type="radio" value="6">深圳</LI>-->
+  </OL>
+  <P class="voteView"><INPUT type="image" src="images/button_vote.gif" id="sumbit"/><A
+  th:href="@{'voteview?sid='+${map.SID}}"><IMG src="images/button_view.gif"/></A></P></FORM></LI></UL></DIV>
+<DIV class="wrap" id="footer">	北大青鸟 © 版权所有 </DIV></BODY></HTML>
+<script src="js/jquery-1.8.3.min.js" ></script>
+<script>
+    $(function(){
+        $("#sumbit").click(function(){
+            if(toupiao()&&sfxz()){
+                $.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    data: $("#form").serialize(),
+                    async: false,
+                    url: 'insertVote',
+                    success:function(data){
+                        if(data==true){
+                            alert("投票成功！！！");
+                            window.location.href='voteview?sid='+[[${map.SID}]];
+                        }else if(data==false){
+                            alert("投票失败");
+                        }
+                    }
+                });
+            }
+        });
+  });
+
+
+    function toupiao(){
+        var sid=[[${map.SID}]];
+        var pd=true;
+        $.ajax({
+            data:{"sid":sid},
+            dataType:'json',
+            type:'post',
+            async:false,
+            url:'selecTouPiao',
+            success:function(data){
+                if(data==true){
+                    alert("你已经投过票了");
+                    window.location.href='voteview?sid='+[[${map.SID}]];
+                    pd=false;
+                }
+            }
+        });
+        return pd;
+    }
+
+    function sfxz(){
+        var val=$('input[name="oid"]:checked').val();
+        if(val!=null&&val!=''){
+            return true;
+        }else{
+            alert("请先选择选项！！！");
+            return false;
+        }
+    }
+</script>

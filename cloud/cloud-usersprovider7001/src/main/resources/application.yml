@@ -1,0 +1,41 @@
+mybatis-plus:
+  type-aliases-package: com.cssl.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    auto-mapping-behavior: full
+    use-generated-keys: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+      logic-delete-field: is_delete # 全局逻辑删除的实体字段名
+spring:
+  application:
+    name: users-provider
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///test?serverTimezone=GMT
+    username: root
+    password: root
+server:
+  port: 7001
+
+
+eureka:
+  client:
+    register-with-eureka: true #向eurek server 注册
+    fetch-registry: true #获取信息列表
+    service-url:
+      defaultZone: http://admin:123@eureka2.com:6002/eureka/,http://admin:123@eureka1.com:6001/eureka/   #注意用户名和密码 @
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        #include: hystrix.stream
+  endpoint:
+    health:
+      show-details: ALWAYS

@@ -1,0 +1,26 @@
+server:
+  port: 8088
+  
+  servlet:
+    context-path: /boot
+  
+spring:
+  application:
+    name: maven
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ENC(tLMx3TdGv1BR48yvlrmCrpN+hcoTlMZnCfeGqFi9G1Amgdb/kor+/2rPrny/j6ez)
+    username: ENC(WD4Sw3SbqV69biu/DOK7PQ==)
+    password: ENC(oy+8swKwtmpGgue0Xv7Dqg==)  
+    
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+mybatis:
+  type-aliases-package: com.cssl.pojo
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    auto-mapping-behavior: full
+    use-generated-keys: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl 

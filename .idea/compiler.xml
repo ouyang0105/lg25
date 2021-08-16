@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringBoot02" />
+        <module name="MyVote" />
+        <module name="SpringBoot03" />
+        <module name="boot-adminui" />
+        <module name="cloud-zuul9001" />
+        <module name="Spring" />
+        <module name="demo" />
+        <module name="nosql" />
+        <module name="cloudusersconsumer8001" />
+        <module name="eureka-server6002" />
+        <module name="eureka-server6001" />
+        <module name="dubbo-provider" />
+        <module name="Springboot04" />
+        <module name="cloud-common" />
+        <module name="cloud-usersprovider7001" />
+        <module name="vloud-hystrixdashboard5001" />
+        <module name="dubbo-userconsumer" />
+        <module name="dubbo-api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="boot-adminui" target="1.8" />
+      <module name="cloud-common" target="11" />
+      <module name="cloud-usersprovider7001" target="1.8" />
+      <module name="cloud-zuul9001" target="1.8" />
+      <module name="cloudusersconsumer8001" target="1.8" />
+      <module name="demo" target="1.5" />
+      <module name="dubbo-api" target="11" />
+      <module name="dubbo-provider" target="1.8" />
+      <module name="dubbo-userconsumer" target="1.8" />
+      <module name="eureka-server6001" target="1.8" />
+      <module name="eureka-server6002" target="1.8" />
+      <module name="MyVote" target="1.8" />
+      <module name="nosql" target="1.8" />
+      <module name="Nosql2" target="1.8" />
+      <module name="Spring" target="1.8" />
+      <module name="SpringBoot01" target="1.6" />
+      <module name="SpringBoot02" target="1.8" />
+      <module name="SpringBoot03" target="1.8" />
+      <module name="Springboot04" target="1.8" />
+      <module name="vloud-hystrixdashboard5001" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="MyVote" options="" />
+      <module name="Spring" options="-parameters" />
+    </option>
+  </component>
+</project>

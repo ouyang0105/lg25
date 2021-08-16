@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- namespace映射dao接口的全路径 -->
+<mapper namespace="com.cssl.dao.IEmpDao">
+
+
+<insert id="insertEmp">
+    insert into Emp values(#{empno},#{ename},#{hiredate},#{sal},#{dept.deptno})
+</insert>
+
+    <select id="selectEmp" resultMap="Emp_dept">
+        select * from EMP e
+    </select>
+
+    <resultMap id="Emp_dept" type="com.cssl.entity.Emp">
+        <result property="empno" column="empno"></result>
+        <association property="dept" column="deptno" select="getDept" javaType="com.cssl.entity.Dept"></association>
+    </resultMap>
+
+    <select id="getDept" resultType="com.cssl.entity.Dept">
+        select * from dept where deptno=#{deptno}
+    </select>
+
+    <select id="selectOne" resultMap="Emp_dept">
+        select * from EMP e where empno=#{empno}
+    </select>
+
+    <update id="update" parameterType="com.cssl.entity.Emp">
+        UPDATE  emp SET ename=#{ename},hiredate=#{hiredate},sal=#{sal},deptno=#{dept.deptno} WHERE empno=#{empno}
+    </update>
+
+</mapper>

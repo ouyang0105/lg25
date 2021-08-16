@@ -1,0 +1,35 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: users-consumer
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:5002   #springboot-admin-server地址
+
+eureka:
+  client:
+    register-with-eureka: true #向eurek server 注册
+    fetch-registry: true #获取信息列表
+    service-url:
+     defaultZone: http://admin:123@eureka2.com:6002/eureka/,http://admin:123@eureka1.com:6001/eureka/   #注意用户名和密码 @
+USERS-PROVIDER: #服务名
+  ribbon:
+    NFloadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule  #权重
+
+feign:
+  hystrix:
+    enabled: true   #默认false
+
+
+#springboot-admin监控开放
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #全部监控
+        #include: hystrix.stream
+  endpoint:
+    health:
+      show-details: ALWAYS

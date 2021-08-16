@@ -1,0 +1,91 @@
+﻿<HTML xmlns:th="http://www.thymeleaf.org">
+<HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible"> 
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<TITLE>投票列表</TITLE> <LINK href="css/style.css" rel="stylesheet" type="text/css">
+<META name="GENERATOR" content="MSHTML 11.00.10586.420"></HEAD> 
+<BODY>
+<DIV class="wrap" id="header"><IMG src="images/logo.gif"> </DIV>
+<DIV class="wrap" id="navbar">
+<DIV class="profile">您好，admin		 <SPAN class="return"><A href="votelist">返回列表</A></SPAN>
+		 <SPAN class="addnew"><A href="add">添加新投票</A></SPAN>
+		 <SPAN class="modify"><A href="javascript:void(0);" onclick="weihu()">维护</A></SPAN>
+		 <SPAN class="return"><A 
+href="zx">注销</A></SPAN>	 </DIV>
+<DIV class="search">
+<FORM action="votelist" method="post" ><INPUT name="keywords" th:value="${keywords}" class="input-text" type="text"><INPUT name="submit" class="input-button" type="submit" value=""/>
+		 </FORM></DIV></DIV>
+<DIV class="wrap" id="vote">
+<H2>投票列表</H2>
+<DIV style="float: right;">
+	<A href="#" th:href="@{'votelist?keywords='+${keywords}}">首页</A>
+| 	<A href="#" th:href="@{'votelist?pageno='+${list.current-1}+'&keywords='+${keywords}}">上一页</A>|
+	<A href="#" th:href="@{'votelist?pageno='+${list.current+1}+'&keywords='+${keywords}}">下一页</A>|
+	<A href="#" th:href="@{'votelist?pageno='+${list.pages}+'&keywords='+${keywords}}">末页</A>
+	 </DIV><BR>
+<UL class="list">
+  <LI class="odd" th:each="su,suStat:${list.records}">
+  <H4><A 
+  href="#"
+  th:href="@{'voteview?sid='+${su.SID}}"
+  th:text="${su.TITLE}" >哪个浏览器好用</A>
+  </H4>
+  <DIV class="join3" style="display: none"><A href="#" th:href="@{'modify?sid='+${su.SID}}">修改</A></DIV>
+  <DIV class="join2" style="display: none">
+	  <A href="javascript:void(0);"  th:onclick="deletes([[${su.SID}]]);">删除</A>
+  </DIV>
+  <DIV class="join"><A href="#" th:href="@{'vote?sid='+${su.SID}}">我要参与</A></DIV>
+  <P class="info">共有 <span th:text="${su.CONTENTNUM}">4</span> 个选项，已有
+	  <span th:text="${su.VIDNUM}">15</span>
+	  个投票。</P></LI>
+  <!--<LI>
+  <H4><A
+  href="http://localhost:8080/myVote/Vote-view.action?entityId=1">就业意向城市</A>
+  			 </H4>
+  <DIV class="join"><A href="http://localhost:8080/myVote/Vote-vote.action?entityId=1">我要参与</A></DIV>
+  <P class="info">共有 4 个选项，已有 						 9						 个投票。</P></LI>
+  <LI class="odd">
+  <H4><A
+  href="http://localhost:8080/myVote/Vote-view.action?entityId=141">学士后9班谁最2</A>
+  			 </H4>
+  <DIV class="join"><A href="http://localhost:8080/myVote/Vote-vote.action?entityId=141">我要参与</A></DIV>
+  <P class="info">共有 4 个选项，已有 						 8						 个投票。</P></LI>--></UL>
+<DIV style="float: right;">
+	<A href="#" th:href="@{'votelist?keywords='+${keywords}}">首页</A>
+	|<A href="#" th:href="@{'votelist?pageno='+${list.current-1}+'&keywords='+${keywords}}">上一页</A>|
+	<A href="#" th:href="@{'votelist?pageno='+${list.current+1}+'&keywords='+${keywords}}">下一页</A>|
+	<A href="#" th:href="@{'votelist?pageno='+${list.pages}+'&keywords='+${keywords}}">末页</A></DIV></DIV>
+<DIV class="wrap" id="footer">	北大青鸟 © 版权所有 </DIV></BODY></HTML>
+<script src="js/jquery-1.8.3.min.js" ></script>
+<script>
+	function weihu(){
+		var display =$('.join3').css('display');
+		//alert(display);
+		if(display=='block'){
+			$(".join3,.join2").attr("style","display:none;");//隐藏div
+		}else if(display=="none"){
+			$(".join3,.join2").attr("style","display:block;");//显示div
+		}
+	}
+	function deletes(sid){
+		alert(sid)
+		$.ajax({
+			type:'post',
+			dataType:'json',
+			async:false,
+			url:'delete',
+			data:{"sid":sid},
+			success:function(data){
+				if(data==true){
+					window.location.reload();
+					alert("删除成功!!!");
+				}else if(data==false){
+					alert("删除失败!!!");
+				}else if(data=="权限不足"){
+					window.location.href="quanxian";
+				}
+			}
+		});
+	}
+
+</script>
